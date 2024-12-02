@@ -23,21 +23,11 @@ for dirname, _, filenames in os.walk('/kaggle/input'):
 # You can also write temporary files to /kaggle/temp/, but they won't be saved outside of the current session
 
 
-# In[2]:
-
-
-pip install atproto
-
-
-# In[6]:
-
 
 import os
 os.system("pip install spacy")
 os.system("python -m spacy download en_core_web_sm")
 
-
-# In[ ]:
 
 
 from atproto import Client
