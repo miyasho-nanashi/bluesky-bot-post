@@ -25,4 +25,4 @@ jobs:
       - name: Run Bluesky posting script
         env:
           BLUESKY_PASSWORD: ${{ secrets.BLUESKY_PASSWORD }}
-        run: python skyblue_post_bot.py
+        run: python skyblue-post-bot.py
