@@ -1,0 +1,27 @@
+name: Post to Bluesky Daily
+
+on:
+  schedule:
+    - cron: "0 8,16 * * *"  # Run at 8 AM and 4 PM UTC daily
+
+jobs:
+  post-to-bluesky:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+
+      - name: Install dependencies
+        run: |
+          pip install atproto spacy
+          python -m spacy download en_core_web_sm
+
+      - name: Run Bluesky posting script
+        env:
+          BLUESKY_PASSWORD: ${{ secrets.BLUESKY_PASSWORD }}
+        run: python skyblue_post_bot.py
