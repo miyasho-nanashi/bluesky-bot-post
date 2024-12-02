@@ -24,9 +24,6 @@ for dirname, _, filenames in os.walk('/kaggle/input'):
 
 
 
-import os
-os.system("pip install spacy")
-os.system("python -m spacy download en_core_web_sm")
 
 
 
